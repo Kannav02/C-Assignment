@@ -1,0 +1,35 @@
+for the assignment we want to know 4 things namely
+The monthly earnings
+The return on investment
+The estimated current value
+The capital gains
+
+
+so the above functions will act as functions for which we will get a value
+
+there will be 3 sub structures , 1 main structure
+
+each substructure for appartments , townhouses ,semi detached houses 
+
+the main structure will have the following information:
+ char name[34]
+char address[64]
+struct appartments appartment[5]
+struct townhouses townhouse[5]
+struct semi detached houses[5]
+
+
+Sub structures are as following 
+struct appartment{
+char address[64]
+int  Nrooms
+int Nbathrooms
+int PurchasePrice
+int MonthlyR
+int MonthlyCfees
+int MonthlyEarnings
+int annualReturn
+int CurrentV
+int CapitalG
+}
+	
