@@ -33,3 +33,45 @@ int CurrentV
 int CapitalG
 }
 	
+struct townhouse{
+char address[64]
+int Nrooms
+int Nbathrooms
+int Pprice
+int MonthlyRent
+int MonthlyUtilities
+int MonthlyCFees
+int MonthlyPropertyTax
+int MonthlyEarnings
+int annualReturn
+int CurrentV
+int CapitalG
+}
+
+struct semi_detached{
+char address[64]
+int Nrooms
+int Nbathrooms
+int Pprice
+int MonthlyRent
+int MonthlyUtilities
+int MonthlyProperty
+int MonthlyPropertyTax
+int MonthlyEarnings
+int annualReturn
+int CurrentV
+int CapitalG
+}
+
+
+
+for the functions the following calculations wil take place 
+
+double MonthlyEarnings(int MonthlyRent,Int MonthlyUtilities , int MonthlyPropertyTax){
+monthly earnings = monthly rent - monthly utilities - monthly property tax
+
+}
+
+
+
+
