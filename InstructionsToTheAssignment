@@ -25,12 +25,12 @@ char address[64]
 int  Nrooms
 int Nbathrooms
 int PurchasePrice
-int MonthlyR
-int MonthlyCfees
-int MonthlyEarnings
-int annualReturn
-int CurrentV
-int CapitalG
+double MonthlyRent
+double MonthlyCfees
+double MonthlyEarnings
+double annualReturn
+double CurrentV
+double CapitalG
 }
 	
 struct townhouse{
@@ -38,39 +38,66 @@ char address[64]
 int Nrooms
 int Nbathrooms
 int Pprice
-int MonthlyRent
-int MonthlyUtilities
-int MonthlyCFees
-int MonthlyPropertyTax
-int MonthlyEarnings
-int annualReturn
-int CurrentV
-int CapitalG
+double MonthlyRent
+double MonthlyUtilities
+double MonthlyCFees
+double MonthlyPropertyTax
+double MonthlyEarnings
+double annualReturn
+double CurrentV
+double CapitalG
 }
 
 struct semi_detached{
 char address[64]
 int Nrooms
 int Nbathrooms
-int Pprice
-int MonthlyRent
-int MonthlyUtilities
-int MonthlyProperty
-int MonthlyPropertyTax
-int MonthlyEarnings
-int annualReturn
-int CurrentV
-int CapitalG
+double Pprice
+double MonthlyRent
+double MonthlyUtilities
+double MonthlyProperty
+double MonthlyPropertyTax
+double MonthlyEarnings
+double annualReturn
+double CurrentV
+double CapitalG
 }
 
 
 
 for the functions the following calculations wil take place 
 
-double MonthlyEarnings(int MonthlyRent,Int MonthlyUtilities , int MonthlyPropertyTax){
-monthly earnings = monthly rent - monthly utilities - monthly property tax
+double MonthlyEarnings(double MonthlyRent,double MonthlyUtilities ,double MonthlyPropertyTax){
+monthly earnings = monthly rent - monthly utilities - monthly property tax;
 
 }
+double ReturnOnInvestment(double MonthlyEarnings,double Pprice){
+rinvestment=100*12*MonthlyEarnings/Pprice
+
+}
+
+double CurrentValue(double MonthlyEarnings){
+cvalue=12*MonthlyEarnings/interest rate(this is a value which will be pre defined in the main code , as 0.05)
+}
+double CapitalGains(double CurrentValue, Double Pprice){
+CapitalG=currentvalue-Pprice
+}
+
+This sums up all our functions
+
+
+now a code has been added by professor on his website , we shall use that code to get the required data for our structures ,
+also before inserting the values inside the structure make a function that initializes the array of our structure .
+
+
+thats it for the whole code 
+i’ll be making a skeletal code and publishing on github , check that out too , and make the required changes and then post them on github again , thanks
+
+
+
+
+
+
 
 
 
