@@ -5,7 +5,7 @@
 
 #include "AssignmentSubStruct.h"
 
-struct main{
+struct RealEstate{
 char name[34];
 char address[64];
 struct appartment appartments[5];
