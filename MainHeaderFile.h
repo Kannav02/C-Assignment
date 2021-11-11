@@ -1,5 +1,6 @@
 // creating the main structure 
 // 08-Nov 2021 Kannav Created the main structure
+// 10-Nov 2021 Kannav Added the 4 protoypes of the functions that are to be used in calculatng the total
 
 
 #include "AssignmentSubStruct.h"
@@ -20,3 +21,11 @@ double ReturnOnInvestment(double MonthlyEarnings,double Pprice);
 double CurrentValue(double MonthlyEarnings);
 
 double CapitalGains(double CurrentValue, double Pprice);
+
+double TotalMonthlyEarnings(struct RealEstate *property);
+
+double TotalROI(struct RealEstate *property);
+
+double TotalCvalue(struct RealEstate *property);
+
+double TotalCapitalGains(struct RealEstate *property);
