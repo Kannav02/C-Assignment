@@ -8,12 +8,12 @@ int  Nrooms;
 int Nbathrooms;
 int PurchasePrice;
 double MonthlyRent;
-double MonthlyCfees;
+double MonthlyCFees;
 double MonthlyEarnings;
 double annualReturn;
 double CurrentV;
 double CapitalG;
-}
+};
 
 struct townhouse{
 char address[64];
@@ -28,7 +28,7 @@ double MonthlyEarnings;
 double annualReturn;
 double CurrentV;
 double CapitalG;
-}
+};
 
 struct semi_detached{
 char address[64];
@@ -43,7 +43,7 @@ double MonthlyEarnings;
 double annualReturn;
 double CurrentV;
 double CapitalG;
-}
+};
 
 
 
