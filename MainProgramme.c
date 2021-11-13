@@ -85,7 +85,7 @@ int main(void) {
 		fscanf(fp, "%lf", &monthlyRent);
 		fscanf(fp, "%lf", &monthlyUtilities);
 		fscanf(fp, "%lf", &monthlyPropertyTax);
-        strcpy(p->townhouses[i].address,address);
+        strcpy(p->houses[i].address,address);
         p->houses[i].Nrooms=rooms;
         p->houses[i].Nbathrooms=bathrooms;
         p->houses[i].Pprice=purchasePrice;
