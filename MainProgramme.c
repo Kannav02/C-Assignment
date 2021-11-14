@@ -38,9 +38,8 @@ int main(void) {
         p->appartments[i].MonthlyRent=monthlyRent;
         p->appartments[i].MonthlyCFees=monthlyCondoFees;
         p->appartments[i].MonthlyEarnings=0;
-        p->appartments[i].annualReturn=0;
-        p->appartments[i].CurrentV=0;
-        p->appartments[i].CapitalG=0;
+        p->appartments[i].CurrentV=CurrentValue(p->appartments[i].MonthlyEarnings);
+        p->appartments[i].CapitalG=CapitalGains(p->appartments[i].CurrentV,p->appartments[i].PurchasePrice);
 
         
 		while (fgetc(fp) != '\n');//clear the file buffer before the next fscanf()
@@ -67,7 +66,6 @@ int main(void) {
         p->townhouses[i].MonthlyUtilities=monthlyUtilities;
         p->townhouses[i].MonthlyPropertyTax=monthlyPropertyTax;
         p->townhouses[i].MonthlyEarnings=0;
-        p->townhouses[i].annualReturn=0;
         p->townhouses[i].CurrentV=0;
         p->townhouses[i].CapitalG=0;
 
@@ -93,7 +91,6 @@ int main(void) {
         p->houses[i].MonthlyUtilities=monthlyUtilities;
         p->houses[i].MonthlyPropertyTax=monthlyPropertyTax;
         p->houses[i].MonthlyEarnings=0;
-        p->houses[i].annualReturn=0;
         p->houses[i].CurrentV=0;
         p->houses[i].CapitalG=0;
         
