@@ -1,17 +1,18 @@
 // 11-Nov 2021 Kannav Created this 
 // 12-Nov 2021 Kannav Modified the files and added the functions
 // 13-Nov 2021 Kannav finalised the programme
-
+// 15-Nov 2021 Kannav and Bhavjot Tested and documented the code
+// 16-Nov 2021 Samay reworked On the code
 
 
 #define _CRT_SECURE_NO_WARNINGS
-#define InterestRate 0.05
+#define InterestRate 0.05  //Defining the interest rate
 #include <stdio.h>
 #include <string.h>
-#include "MainHeaderFile.h"
+#include "MainHeaderFile.h"// include the main header file 
 
 int main(void) {
-    //Read the data for all companies from a file
+    //Creating all the variables required to take input from the file 
 	char address[255];
 	int rooms;
 	int bathrooms;
@@ -31,8 +32,8 @@ int main(void) {
     
     
 
-	//Retrieve data for apartments
-	FILE *fp = fopen("Apartments.txt", "r");
+	FILE *fp = fopen("Apartments.txt", "r");// Opening the appartments file to read text 
+    // assigning the data to the appartments structure 
 	for (int i = 0; i < NUM_PROPERTY; ++i) {
 		fscanf(fp, "%[^\n]s", address);
 		fscanf(fp, "%d", &rooms);
@@ -51,22 +52,23 @@ int main(void) {
         p->appartments[i].CapitalG=CapitalGains(p->appartments[i].CurrentV,p->appartments[i].PurchasePrice);
         SumP=SumP+p->appartments[i].PurchasePrice;
         
-		while (fgetc(fp) != '\n');//clear the file buffer before the next fscanf()
+		while (fgetc(fp) != '\n');//clearing the file buffer before the next fscanf()
 	}
+    // Calculating Everything for the appartment section
     MEarnings=TotalMonthlyEarningsAppart(&property,n);
     ROI=ReturnOnInvestment(MEarnings,SumP);
     Currentv=TotalCvalueAppart(&property,n);
     Capitalg=TotalCapitalGainsAppart(&property,n);
 
 
-
-    printf("The following are financial stats for Brookfield Asset Management, 11 Yonge Street.\n");
-    printf("For the apartments, the monthly earnings are $%2.lf, the roi is %.2lf the total value is %.2lf and the capital gains are %.2lf\n",MEarnings,ROI,Currentv,Capitalg);
+    // priinting out the values for the appartment
+    printf("The following are financial stats for Brookfield Asset Management, 11 Yonge Street.\n\n");
+    printf("For the apartments, the monthly earnings are $%.2lf, the roi is %.2lf%% the total value is $%.2lf and the capital gains are $%.2lf\n\n",MEarnings,ROI,Currentv,Capitalg);
 
 	fclose(fp);
     SumP=0;
     n=2;
-	//Retrieve data for townhouses
+
 	fp = fopen("Townhouses.txt", "r");
 	for (int i = 0; i < NUM_PROPERTY; ++i) {
 		fscanf(fp, "%[^\n]s", address);
@@ -96,7 +98,7 @@ int main(void) {
     Currentv=TotalCvalueAppart(&property,n);
     Capitalg=TotalCapitalGainsAppart(&property,n);
 	fclose(fp);
-    printf("For the townhouses, the monthly earnings are $%2.lf, the roi is %.2lf the total value is %.2lf and the capital gains are %.2lf\n",MEarnings,ROI,Currentv,Capitalg);
+    printf("For the townhouses, the monthly earnings are $%.2lf, the roi is %.2lf%% the total value is $%.2lf and the capital gains are $%.2lf\n\n",MEarnings,ROI,Currentv,Capitalg);
 	//Retrieve data for semi-detached houses
     n=3;
     SumP=0;
@@ -130,7 +132,7 @@ int main(void) {
     Currentv=TotalCvalueAppart(&property,n);
     Capitalg=TotalCapitalGainsAppart(&property,n);
 
-    printf("For the semi detached houses, the monthly earnings are $%2.lf, the roi is %.2lf the total value is %.2lf and the capital gains are %.2lf\n",MEarnings,ROI,Currentv,Capitalg);
+    printf("For the semi detached houses, the monthly earnings are $%.2lf, the roi is %.2lf%% the total value is $%.2lf and the capital gains are $%.2lf\n\n",MEarnings,ROI,Currentv,Capitalg);
 	fclose(fp);
 
 	return 0;
